@@ -1,8 +1,4 @@
-# REST HUb 2.0
-
-An app demonstrating simple API implementation with NodeJs, Express and MongoDb
-
-The companion tutorial on building can be found here <b>[How To Build Simple RESTful API With NodeJs, ExpressJs And MongoDb](https://medium.com/@dinyangetoh/how-to-build-simple-restful-api-with-nodejs-expressjs-and-mongodb-99348012925d)</b> 
+# REST Hub 
 
 The `api` uri preceed all API endpoints and the following endpoints are currently available
 * GET `/api/contacts`
@@ -12,12 +8,18 @@ The `api` uri preceed all API endpoints and the following endpoints are currentl
 * PATCH `/api/contacts/:id`
 * DELETE `/api/contacts/:id`
 
-The live app is available on heroku here
-https://resthub2.herokuapp.com
+# Local Setup
+
+First time setup:
+1. ```npm install```
+2. Create a `.env` file:
+   1. ```db_connection_string=mongodb://localhost/resthub```
 
 
+To run the application:
+```
+npm start
+```
 
-Get in Touch
-===============
-
-I am available on twitter, facebook, linkedin, gmail @dinyangetoh
+# Live Application
+The live app is available on heroku here https://cs3219-otot-b.herokuapp.com/
