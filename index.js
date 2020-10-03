@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 // mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 
 // Heroku Mongoose connection
-mongoose.connect(process.env.db_connection_string, { useNewUrlParser: true });
+mongoose.connect(process.env.db_connection_string + "resthub", { useNewUrlParser: true });
 
 var db = mongoose.connection;
 
@@ -42,3 +42,5 @@ app.use('/api', apiRoutes);
 app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
+
+export default app;

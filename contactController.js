@@ -1,6 +1,7 @@
 // contactController.js
 // Import contact model
-Contact = require('./contactModel');
+// Contact = require('./contactModel');
+import Contact from "./contactModel";
 // Handle index actions
 exports.index = function (req, res) {
     Contact.get(function (err, contacts) {
@@ -24,7 +25,7 @@ exports.new = function (req, res) {
     contact.gender = req.body.gender;
     contact.email = req.body.email;
     contact.phone = req.body.phone;
-// save the contact and check for errors
+    // save the contact and check for errors
     contact.save(function (err) {
         // Check for validation error
         if (err)
@@ -56,7 +57,7 @@ exports.update = function (req, res) {
         contact.gender = req.body.gender;
         contact.email = req.body.email;
         contact.phone = req.body.phone;
-// save the contact and check for errors
+        // save the contact and check for errors
         contact.save(function (err) {
             if (err)
                 res.json(err);
@@ -69,7 +70,7 @@ exports.update = function (req, res) {
 };
 // Handle delete contact
 exports.delete = function (req, res) {
-    Contact.remove({
+    Contact.deleteOne({
         _id: req.params.contact_id
     }, function (err, contact) {
         if (err)
