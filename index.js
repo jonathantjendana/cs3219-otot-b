@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 // mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
 
 // Heroku Mongoose connection
-let connection = process.env.db_connection_string || "mongodb://localhost/resthub"
+let connection = process.env.db_connection_string || "mongodb+srv://dbUser:cqHFoU522X7XUlQW@cluster0.b9mte.mongodb.net/RestHub?retryWrites=true&w=majority"
 mongoose.connect(connection, { useNewUrlParser: true });
 
 var db = mongoose.connection;
