@@ -20,12 +20,13 @@ describe("Contacts", () => {
         contact.email = "test@email.com";
         contact.phone = 81234567;
         before((done) => {
-            mongoose.disconnect(() => {
-                mongoose.connect(process.env.db_connection_string + "testdb", { useNewUrlParser: true })
-                const db = mongoose.connection;
-                db.useDb("testDB", { useCache: true })
+
+            // mongoose.disconnect(() => {
+            //     mongoose.connect(process.env.db_connection_string + "testdb", { useNewUrlParser: true })
+            //     const db = mongoose.connection;
+            //     db.useDb("testDB", { useCache: true })
                 
-                console.log(db)
+                // console.log(db)
                 contact.save(function (err) {
                     if (err)
                         return done(err)
@@ -34,7 +35,7 @@ describe("Contacts", () => {
                         done()
                     }
                 });
-            });
+            // });
         })
 
         it("should create a contact record", (done) => {

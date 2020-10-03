@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require babel-register tests/*.js --exit",
+    "test": "db_connection_string=mongodb://localhost/testRestHub mocha --require babel-register tests/*.js --exit",
     "start": "nodemon --exec babel-node --presets babel-preset-env ./index.js"
   },
   "keywords": [],
