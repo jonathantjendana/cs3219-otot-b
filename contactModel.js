@@ -1,5 +1,5 @@
 // contactModel.js
-import mongoose from 'mongoose';
+let mongoose = require('mongoose')
 // Setup schema
 var contactSchema = mongoose.Schema({
     name: {

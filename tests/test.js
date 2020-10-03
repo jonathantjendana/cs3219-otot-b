@@ -1,13 +1,18 @@
 // Import the dependencies for testing
 
-import chai from "chai";
-import chaiHttp from 'chai-http';
-import app from '../index';
+// import chai from "chai";
+// import chaiHttp from 'chai-http';
+// import app from '../server';
 
-import Contact from '../contactModel'
-import mongoose from 'mongoose'
+// import Contact from '../contactModel'
+// import mongoose from 'mongoose'
+
+let app = require("../server")
+let chai = require('chai')
+let chaiHttp = require('chai-http')
+let Contact = require('../contactModel')
+let mongoose = require('mongoose')
 // let Contact = mongoose.model('tests', contactSchema)
-
 // Configure chai
 chai.use(chaiHttp);
 chai.should();

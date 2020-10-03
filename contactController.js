@@ -1,9 +1,9 @@
 // contactController.js
 // Import contact model
-// Contact = require('./contactModel');
-import Contact from "./contactModel";
+Contact = require('./contactModel');
+// import Contact from "./contactModel";
 // Handle index actions
-exports.index = function (req, res) {
+exports.index = async function (req, res) {
     Contact.get(function (err, contacts) {
         if (err) {
             res.json({
@@ -19,7 +19,7 @@ exports.index = function (req, res) {
     });
 };
 // Handle create contact actions
-exports.new = function (req, res) {
+exports.new = async function (req, res) {
     var contact = new Contact();
     contact.name = req.body.name ? req.body.name : contact.name;
     contact.gender = req.body.gender;
@@ -38,7 +38,7 @@ exports.new = function (req, res) {
     });
 };
 // Handle view contact info
-exports.view = function (req, res) {
+exports.view = async function (req, res) {
     Contact.findById(req.params.contact_id, function (err, contact) {
         if (err)
             res.send(err);
@@ -49,7 +49,7 @@ exports.view = function (req, res) {
     });
 };
 // Handle update contact info
-exports.update = function (req, res) {
+exports.update = async function (req, res) {
     Contact.findById(req.params.contact_id, function (err, contact) {
         if (err)
             res.send(err);
@@ -69,7 +69,7 @@ exports.update = function (req, res) {
     });
 };
 // Handle delete contact
-exports.delete = function (req, res) {
+exports.delete = async function (req, res) {
     Contact.deleteOne({
         _id: req.params.contact_id
     }, function (err, contact) {
