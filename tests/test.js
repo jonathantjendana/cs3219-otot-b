@@ -21,21 +21,14 @@ describe("Contacts", () => {
         contact.phone = 81234567;
         before((done) => {
 
-            // mongoose.disconnect(() => {
-            //     mongoose.connect(process.env.db_connection_string + "testdb", { useNewUrlParser: true })
-            //     const db = mongoose.connection;
-            //     db.useDb("testDB", { useCache: true })
-                
-                // console.log(db)
-                contact.save(function (err) {
-                    if (err)
-                        return done(err)
-                    else {
-                        validId = contact._id
-                        done()
-                    }
-                });
-            // });
+            contact.save(function (err) {
+                if (err)
+                    return done(err)
+                else {
+                    validId = contact._id
+                    done()
+                }
+            });
         })
 
         it("should create a contact record", (done) => {
@@ -92,7 +85,6 @@ describe("Contacts", () => {
                 .get(`/api/contacts/${id}`)
                 .end((err, res) => {
                     res.should.have.status(200);
-                    console.log(res.body)
                     res.body.should.have.property("data", null)
                     done();
                 });
