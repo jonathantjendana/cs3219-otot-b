@@ -3,6 +3,14 @@ node_js:
     - "node"
 services:
   - mongodb
-before_script:
-  - sleep 15
-  - mongo mydb_test --eval 'db.createUser({user:"travis",pwd:"test",roles:["readWrite"]});'
+install:
+  - npm install -g serverless
+  - npm install
+script:
+  - npm test
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: sls deploy
+  on:
+    branch: master

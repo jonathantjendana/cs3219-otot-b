@@ -1,4 +1,5 @@
 require('dotenv').config()
+const serverless = require('serverless-http');
 // Import express
 let express = require('express');
 // Import Body parser
@@ -44,4 +45,5 @@ app.listen(port, function () {
     console.log("Running RestHub on port " + port);
 });
 
-export default app;
+module.exports = app;
+module.exports.handler = serverless(app);
