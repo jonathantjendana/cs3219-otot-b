@@ -16,8 +16,6 @@ app.use(function (req, res, next) {
 });
 app.use(cors())
 
-app.use(express.static(path.join(__dirname, 'client/dist')));
-
 // Heroku Mongoose connection
 let connection = process.env.MONGO_URI || "mongodb+srv://dbUser:cqHFoU522X7XUlQW@cluster0.b9mte.mongodb.net/RestHub?retryWrites=true&w=majority"
 mongoose.connect(connection, { useNewUrlParser: true });
@@ -29,7 +27,6 @@ mongoose.connect(connection, { useNewUrlParser: true });
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
-app.use(serveStatic(__dirname + "/dist"));
 
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
