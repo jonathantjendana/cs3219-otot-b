@@ -7,7 +7,7 @@
     "build": "cd client && npm run build",
     "install": "cd client && npm install",
     "test": "MONGO_URI=mongodb://localhost/testRestHub mocha tests/*.js --exit",
-    "start": "node server.js",
+    "start": "npm run build && node server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],

@@ -5,7 +5,6 @@ The `api` uri preceed all API endpoints and the following endpoints are currentl
 * POST `/api/contacts`
 * GET `/api/contacts/:id`
 * PUT `/api/contacts/:id`
-* PATCH `/api/contacts/:id`
 * DELETE `/api/contacts/:id`
 
 # Local Setup
@@ -13,7 +12,7 @@ The `api` uri preceed all API endpoints and the following endpoints are currentl
 First time setup:
 1. ```npm install```
 2. Create a `.env` file:
-   1. ```db_connection_string=mongodb://localhost/resthub```
+   1. ```MONGO_URI=mongodb://localhost/resthub```
 
 
 To run the application:
