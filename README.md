@@ -18,9 +18,16 @@ First time setup:
 4. ```npm start```
 5. Application is ready at ```http://localhost:4000```
 
+# Run test files
+```npm test```
+
+# Travis-CI
+The Travis report is available at: [![Build Status](https://travis-ci.com/jonathantjendana/cs3219-otot-b.svg?token=wf4LxQimCsRkGPyoqJcC&branch=master)](https://travis-ci.com/jonathantjendana/cs3219-otot-b)
+
 # AWS Lambda endpoint
 The lambda function is available at: https://s6lo9wpqmg.execute-api.ap-southeast-1.amazonaws.com/dev/api/contacts
 
 # Live Application
 The live app is available on heroku at: https://cs3219-otot-b.herokuapp.com/
+
 The live api is available at: https://cs3219-otot-b.herokuapp.com/api/contacts
