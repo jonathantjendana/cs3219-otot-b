@@ -6,6 +6,8 @@ let cors = require('cors')
 let app = express();
 let apiRoutes = require("./api-routes");
 let path = require('path');
+var serveStatic = require('serve-static');
+
 app.use(express.json());
 app.enable('trust proxy');
 app.use(function (req, res, next) {
@@ -27,14 +29,13 @@ mongoose.connect(connection, { useNewUrlParser: true });
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
-app.get('*', (req, res) => {
-    // res.redirect('/');
-    res.sendFile(path.join(__dirname, './client/dist/index.html'));
+app.use(serveStatic(__dirname + "/dist"));
+
+app.use(express.static(path.join(__dirname, "/client/dist")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/dist/index.html"));
 });
-// Launch app to listen to specified port
-// app.listen(port, function () {
-//     console.log("Running RestHub on port " + port);
-// });
 
 module.exports = app;
 module.exports.handler = serverless(app);
