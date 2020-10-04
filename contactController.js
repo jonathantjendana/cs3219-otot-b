@@ -5,6 +5,7 @@ Contact = require('./contactModel');
 // Handle index actions
 exports.index = async function (req, res) {
     Contact.get(function (err, contacts) {
+        
         if (err) {
             res.json({
                 status: "error",

@@ -21,5 +21,8 @@ To run the application:
 npm start
 ```
 
+# AWS Lambda endpoint
+https://s6lo9wpqmg.execute-api.ap-southeast-1.amazonaws.com/dev/api/contacts
+
 # Live Application
 The live app is available on heroku here https://cs3219-otot-b.herokuapp.com/
