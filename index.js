@@ -21,9 +21,9 @@ let connection = process.env.MONGO_URI || "mongodb+srv://dbUser:cqHFoU522X7XUlQW
 mongoose.connect(connection, { useNewUrlParser: true });
 
 // Send message for default URL
-app.get('/', async function (req, res) {
-    res.send('Hello World with Express')
-});
+// app.get('/', async function (req, res) {
+//     res.send('Hello World with Express')
+// });
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
