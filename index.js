@@ -29,7 +29,7 @@ app.get('/', async function (req, res) {
 app.use('/api', apiRoutes);
 app.get('*', (req, res) => {
     // res.redirect('/');
-    res.sendFile(path.join(__dirname, 'client/dist/index.html'));
+    res.sendFile(path.join(__dirname, './client/dist/index.html'));
 });
 // Launch app to listen to specified port
 // app.listen(port, function () {
